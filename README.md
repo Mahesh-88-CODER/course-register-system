@@ -1,2 +1,2 @@
 # course-register-system
-webproject using springboot
+webproject-springboot-backenddevelopment-java-html-css-js-project
