@@ -1,0 +1,36 @@
+for service
+
+student service(stuservice)
+
+
+package com.example.working.service;
+
+
+import com.example.working.repository.regirepo;
+import com.example.working.repository.stRepository;
+import com.example.working.student.coursedetails;
+import com.example.working.student.registry;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class stuservice {
+    @Autowired
+    stRepository repo;
+@Autowired
+    regirepo rev;
+    public List<coursedetails> availcourse() {
+        return repo.findAll();
+    }
+
+    public List<registry> registed() {
+        return rev.findAll();
+    }
+
+    public void enroll(String name, String emailId, String coursename) {
+        registry regis=new registry(name,emailId,coursename);
+        rev.save(regis);
+    }
+}

@@ -1,0 +1,16 @@
+for repository1
+
+
+
+
+package com.example.working.repository;
+
+import com.example.working.student.registry;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface regirepo extends JpaRepository<registry,Integer> {
+
+}

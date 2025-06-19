@@ -1,0 +1,37 @@
+for controller
+
+
+Student control(st control)
+package com.example.working.controller;
+
+import com.example.working.service.stuservice;
+import com.example.working.student.coursedetails;
+import com.example.working.student.registry;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
+public class Stcontroll{
+    @Autowired
+    stuservice serv;
+    @GetMapping("courses")
+     public List<coursedetails> availcourse(){
+ return  serv.availcourse();
+     }
+
+     @GetMapping("courses/enrolled")
+     public List<registry> registed(){
+        return serv.registed();
+     }
+
+     @PostMapping("courses/register")
+    public String enroll(@RequestParam("name") String name,
+                         @RequestParam("emailId") String emailId,
+                         @RequestParam("coursename") String coursename){
+         serv.enroll(name,emailId,coursename);
+         return "Successfully registered";
+     }
+}

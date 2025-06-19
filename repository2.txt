@@ -1,0 +1,14 @@
+for repository2
+
+
+
+package com.example.working.repository;
+
+import com.example.working.student.coursedetails;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public  interface stRepository extends JpaRepository<coursedetails,String> {
+
+}

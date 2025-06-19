@@ -1,0 +1,66 @@
+coursedetails
+
+
+
+package com.example.working.student;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+@Entity
+public class coursedetails {
+
+
+
+
+
+
+        public String getCourseid() {
+            return courseid;
+        }
+
+        public void setCourseid(String courseid) {
+            this.courseid = courseid;
+        }
+
+        public String getCoursename() {
+            return coursename;
+        }
+
+        public void setCoursename(String coursename) {
+            this.coursename = coursename;
+        }
+
+        public String getTrainee() {
+            return trainee;
+        }
+
+        public void setTrainee(String trainee) {
+            this.trainee = trainee;
+        }
+
+        public int getDurationofweeks() {
+            return durationofweeks;
+        }
+
+        public void setDurationofweeks(int durationofweeks) {
+            this.durationofweeks = durationofweeks;
+        }
+        @Id
+        private String courseid;
+        private String coursename;
+
+        public coursedetails() {
+        }
+
+        public coursedetails(String courseid, String coursename, String trainee, int durationofweeks) {
+            this.courseid = courseid;
+            this.coursename = coursename;
+            this.trainee = trainee;
+            this.durationofweeks = durationofweeks;
+        }
+
+        private String trainee;
+        private int durationofweeks;
+
+    }
+
